@@ -1,0 +1,2 @@
+include ':app', ':githubapi'
+rootProject.name='GitHub Demo'

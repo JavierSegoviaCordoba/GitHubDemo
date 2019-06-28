@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GitHub Demo</string>
+    <string name="image_description_user_avatar">User avatar</string>
+    <string name="error_message">There was an error, try again later</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="email">Email</string>
+    <string name="blog">Blog</string>
+    <string name="user_type">User type</string>
+    <string name="followers">Followers</string>
+    <string name="private_email">This email is private</string>
+    <string name="following">Following</string>
+    <string name="bio">Bio</string>
+</resources>
