@@ -24,12 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         setupLoadAndRefresh()
         setupScreenState()
-
     }
 
     private fun setupLoadAndRefresh() {
         binding.adapter = userAdapter
-        binding.swipeRefreshLayout.setOnRefreshListener { viewModel.getUsers() }
+        binding.swipeRefreshLayout.setOnRefreshListener { viewModel.fetchUsers() }
 
         viewModel.users.observe(this@MainActivity, Observer { users ->
             userAdapter.apply {

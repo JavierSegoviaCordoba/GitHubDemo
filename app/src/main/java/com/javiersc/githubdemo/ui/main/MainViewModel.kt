@@ -23,14 +23,14 @@ class MainViewModel(private val githubRepo: GitHubRepo) : ViewModel() {
 
     val users: LiveData<List<User>> = githubRepo.getUsers()
 
-    fun getUsers() = viewModelScope.launch { githubRepo.fetchUsers() }
+    fun fetchUsers() = viewModelScope.launch { githubRepo.fetchUsers() }
 
     fun finishState() {
         _screenStates.value = ScreenState.FINISHED
     }
 
     init {
-        getUsers()
+        fetchUsers()
     }
 
 }

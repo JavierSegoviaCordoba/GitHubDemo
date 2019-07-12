@@ -13,7 +13,10 @@ val modulesRepo = module { single<GitHubRepo> { GitHubRepoImpl(get(), get()) } }
 
 val modulesService = module { single { GitHubApi() } }
 
-val modulesDatabase = module { single { AppDatabase.getDatabase(get()).gitHubDAO } }
+val modulesDatabase = module {
+    single { AppDatabase.getDatabase(get()) }
+    single { get<AppDatabase>().gitHubDAO }
+}
 
 val modulesUI = module {
     viewModel { MainViewModel(get()) }

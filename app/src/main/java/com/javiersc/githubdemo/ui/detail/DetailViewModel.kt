@@ -23,14 +23,14 @@ class DetailViewModel(private val githubRepo: GitHubRepo, username: String) : Vi
 
     val userDetail: LiveData<UserDetail> = githubRepo.getUserDetail(username)
 
-    fun getUserDetail(username: String) = viewModelScope.launch { githubRepo.fetchUserDetail(username) }
+    fun fetchUserDetail(username: String) = viewModelScope.launch { githubRepo.fetchUserDetail(username) }
 
     fun finishState() {
         _screenStates.value = ScreenState.FINISHED
     }
 
     init {
-        getUserDetail(username)
+        fetchUserDetail(username)
     }
 
 }

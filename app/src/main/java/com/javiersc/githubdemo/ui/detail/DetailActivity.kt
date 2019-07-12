@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupLoadAndRefresh() {
-        binding.swipeRefreshLayout.setOnRefreshListener { username?.let { username -> viewModel.getUserDetail(username) } }
+        binding.swipeRefreshLayout.setOnRefreshListener { username?.let { username -> viewModel.fetchUserDetail(username) } }
         binding.collapsingToolbarLayout.apply {
             setExpandedTitleColor(ContextCompat.getColor(this@DetailActivity, android.R.color.white))
             setCollapsedTitleTextColor(ContextCompat.getColor(this@DetailActivity, android.R.color.white))

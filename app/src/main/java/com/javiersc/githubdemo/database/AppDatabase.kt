@@ -11,8 +11,10 @@ import com.javiersc.githubdemo.database.entity.UserDetail
 abstract class AppDatabase : RoomDatabase() {
 
     companion object {
+
         fun getDatabase(context: Context): AppDatabase =
-            Room.databaseBuilder(context, AppDatabase::class.java, "GitHub").fallbackToDestructiveMigration().build()
+            Room.databaseBuilder(context, AppDatabase::class.java, "GitHub").build()
+
     }
 
     abstract val gitHubDAO: GitHubDAO
